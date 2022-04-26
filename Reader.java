@@ -20,6 +20,7 @@ public class Reader {
                 String[] valoriLetti = riga.split(",");
                 System.out.println("NOME BRANO" + valoriLetti[0]);
             }
+            buffer.close();
             }catch (FileNotFoundException e) {
                 System.out.println("File non trovato");
                 e.printStackTrace();  
