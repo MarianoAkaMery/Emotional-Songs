@@ -8,7 +8,8 @@ import java.io.IOException;
 public class Reader {
     public static void main(String args[]){
         //path per mio pc, c'e' da capire come inserire una che vada bene per tutti
-        String path = "C:\\Users\\Emanuele Buggin\\Documents\\GitHub\\Emotional-songs\\provaFileCsv.csv";
+        //ho scoperto (EMA) che se il file e' nella path della classe si puo' omettere la prima parte, cosi' rendendolo accessibile a tutti
+        String path = "provaFileCsv.csv";
         String riga = "";
 
         try {
