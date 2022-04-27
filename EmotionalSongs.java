@@ -14,14 +14,64 @@ public class EmotionalSongs{
 
 
     public static void DisplayMeny(){
+        boolean continua = true;
 
-        try{
+        while(continua==true){
             System.out.println("Benvenuti in EmotionaSongs\n");
-            System.out.println("Cosa si desidera fare?\n \n1- Cercare Brano\n \n2- Visualizzare Emozoni\n \n3- Registrazione\n \n4- Login\n \n");
-            System.out.println("Scegliere un opzione (1, 2, 3, 4 o 5):");
+            System.out.println("Cosa si desidera fare?\n \n1- Cercare Brano\n \n2- Visualizzare Emozoni\n \n3- Registrazione\n \n4- Login\n \n5- Close\n \n");
+            System.out.println("Scegliere un opzione (1, 2, 3, 4, 5, 6):");
             int Choise=scan.nextInt();
             scan.nextLine();
 
+            switch(Choise){
+                case 1: {
+                    System.out.println("Benvenuti in EmotionaSongs");
+                    break;
+                }
+                case 2:{
+                    System.out.println("Benvenuti in EmotionaSongs");
+                    break;
+                }
+                case 3:{
+                    System.out.println("Benvenuti in EmotionaSongs"); 
+                    break;
+                }
+                case 4:{
+                    System.out.println("Login Part");
+                    Boolean Login=true;
+
+                    if (Login==true){
+
+                            System.out.println("Benvenuto XXXXXX\n \n");
+                            System.out.println("Cosa si desidera fare?\n \n1- Creare Playlist\n \n2- Inserire emozioni\n \n");
+                            System.out.println("Scegliere un opzione (1 o 2):");
+                            int LoggedChoise=scan.nextInt();
+                            scan.nextLine();
+
+                            switch(LoggedChoise){
+                                case 1:{
+                                    System.out.println("Benvenuti in EmotionaSongs");
+                                    break;
+                                }
+                                case 2:{
+                                    System.out.println("Benvenuti in EmotionaSongs");
+                                    break;
+                                }
+                            }
+                    }
+                    break;
+                }
+                case 5:{
+                    continua = false;
+                    break;
+                }
+                default:{
+                    System.out.println("\nScelta non valida");
+                    break;
+                }
+            }
+        }
+            /*
             if (Choise==1){
                 System.out.println("Benvenuti in EmotionaSongs");
             }else{
@@ -62,13 +112,15 @@ public class EmotionalSongs{
             }
 
         }
-       
+        
         finally{
             System.out.println("\nScelta non valida");
         }
-        
+        */
     
     }
+
+
 
     public static void main(String[] args){
         
