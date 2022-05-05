@@ -8,10 +8,9 @@ Gli utenti registrati possono:
 • creare playlist
 • inserire le emozioni provate all’ascolto di determinate canzoni*/
 
-public class EmotionalSongs{
+public class EmotionalSongs extends Registrazione{
 
     static Scanner scan=new Scanner(System.in);
-
 
     public static void DisplayMeny(){
         boolean continua = true;
@@ -33,7 +32,7 @@ public class EmotionalSongs{
                     break;
                 }
                 case 3:{
-                    System.out.println("Benvenuti in EmotionaSongs"); 
+                    RegistrazioneNew();
                     break;
                 }
                 case 4:{
@@ -70,63 +69,15 @@ public class EmotionalSongs{
                     break;
                 }
             }
-        }
-            /*
-            if (Choise==1){
-                System.out.println("Benvenuti in EmotionaSongs");
-            }else{
-                if(Choise==2){
-                    System.out.println("Benvenuti in EmotionaSongs");
-                }else{
-                    if(Choise==3){
-                        System.out.println("Benvenuti in EmotionaSongs");
-                    }else{
-                        if(Choise==4){
-
-                            System.out.println("Login Part");
-                            Boolean Login=true;
-
-                            if (Login==true){
-
-                                    System.out.println("Benvenuto XXXXXX\n \n");
-                                    System.out.println("Cosa si desidera fare?\n \n1- Creare Playlist\n \n2- Inserire emozioni\n \n");
-                                    System.out.println("Scegliere un opzione (1 o 2):");
-                                    int LoggedChoise=scan.nextInt();
-                                    scan.nextLine();
-
-                                    if (LoggedChoise==1){
-                                        System.out.println("Benvenuti in EmotionaSongs");
-                                    }else{
-                                        if(LoggedChoise==2){
-                                            System.out.println("Benvenuti in EmotionaSongs");
-                                        }
-                                    }
-                                
-                            }
-                                
-
-                        }
-                    }
-                }
-
-            }
-
-        }
-        
-        finally{
-            System.out.println("\nScelta non valida");
-        }
-        */
-    
+        }   
     }
 
 
 
     public static void main(String[] args){
-        
-        DisplayMeny();
-
-
-        
+        boolean ContinuaMenu=true;
+        while(ContinuaMenu==true){
+            DisplayMeny();
+        }
 }
 }
