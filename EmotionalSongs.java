@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.*;
 /**All’avvio l’applicazione mostra un menu iniziale dove:
 Tutti possono:
@@ -12,7 +13,7 @@ public class EmotionalSongs extends Registrazione{
 
     static Scanner scan=new Scanner(System.in);
 
-    public static void DisplayMeny(){
+    public static void DisplayMeny() throws FileNotFoundException{
         boolean continua = true;
 
         while(continua==true){
@@ -32,7 +33,15 @@ public class EmotionalSongs extends Registrazione{
                     break;
                 }
                 case 3:{
-                    RegistrazioneNew();
+                    Boolean RegistrationStatus=RegistrazioneNew();
+                    if (RegistrationStatus==true){
+                        System.out.println("\nRegistrazione effettuata con successo!!\n");
+                        wait(3500);
+                    }
+                    else{
+                        System.out.println("Registrazione non effettuata correttamente!\n");
+                        wait(3500);
+                    }
                     break;
                 }
                 case 4:{
@@ -74,7 +83,7 @@ public class EmotionalSongs extends Registrazione{
 
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws FileNotFoundException{
         boolean ContinuaMenu=true;
         while(ContinuaMenu==true){
             DisplayMeny();
