@@ -25,7 +25,7 @@ public class EmotionalSongs extends Registrazione{
 
             switch(Choise){
                 case 1: {
-                    System.out.println("Benvenuti in EmotionaSongs");
+                    Reader.cercaBranoMusicale();
                     break;
                 }
                 case 2:{
@@ -80,7 +80,6 @@ public class EmotionalSongs extends Registrazione{
             }
         }   
     }
-
 
 
     public static void main(String[] args) throws FileNotFoundException{
