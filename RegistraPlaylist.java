@@ -12,23 +12,23 @@ public class RegistraPlaylist{
 
     public static void Registra(){
         
-        String path1="Canzoni.dati.csv";
-        String path2="CreaPlaylistProva.csv";
-        String line="";
-        Scanner scan=new Scanner(System.in);
-
-        String[] brani=new String[980];
-        String[] autori=new String[980];
-        String[] anno=new String[980];
+        Scanner scan = new Scanner(System.in);
+        int maxSong = 980;
+        String pathSong = "Canzoni.dati.csv";
+        String pathPlaylist = "CreaPlaylistProva.csv";
+        String buffer = "";
+        String[] brani = new String[maxSong];
+        String[] autori = new String[maxSong];
+        String[] anno = new String[maxSong];
         
         int i=0;  //numero totale di canzoni nella lista
         
         try{
             
-            BufferedReader br=new BufferedReader(new FileReader(path1));
+            BufferedReader br=new BufferedReader(new FileReader(pathSong));
             
-            while((line=br.readLine())!=null){
-                String[] val=line.split(",");
+            while((buffer = br.readLine()) != null){
+                String[] val = buffer.split(",");
 
                 brani[i]=val[0];
                 autori[i]=val[1];
@@ -39,34 +39,30 @@ public class RegistraPlaylist{
 
             System.out.println("\nQui potrai creare le tue playlist. Iniziamo!");
             System.out.println("Inserisci il tuo nome, così gli altri utenti sapranno che questa playlist è stata creata da te.");
-            String nomeUtente=scan.nextLine();
+            String nomeUtente = scan.nextLine();
             System.out.println("\n");
 
 
             System.out.println("Inserisci il nome della playlist");
-            String nomePlaylist=scan.nextLine();
+            String nomePlaylist = scan.nextLine();
             System.out.println();
 
 
             System.out.println("Cosa si desidera fare?\n \n1- Comporre la playlist inserendo brani a tua scelta.\n \n2- Comporre la playlist inserendo tutti i brani di un autore a tua scelta.\n \n3- Comporre la playlist inserendo tutti i brani di anno a tua scelta.\n \n");
             System.out.println("Scegliere un opzione (1, 2, 3):");
-            int Choise=scan.nextInt();
+            int Choise = scan.nextInt();
             scan.nextLine();
 
             
             //parte di creazione della playlist
             
             
-            FileWriter fw = new FileWriter(path2,true);
+            FileWriter fw = new FileWriter(pathPlaylist,true);
             BufferedWriter bw=new BufferedWriter(fw);
             PrintWriter pw=new PrintWriter(bw);
-
-            
             pw.println();
-            pw.println();
-            pw.println("NOME PLAYLIST: " + nomePlaylist);
-            pw.println("Creata da: " + nomeUtente);
-            pw.println();
+            pw.print(nomePlaylist);
+            pw.println("\t" + nomeUtente);
             pw.println(brani[0] + "," + autori[0] + "," + anno[0]);
             
             
@@ -74,7 +70,7 @@ public class RegistraPlaylist{
             int k=1;
             String titolo="";
             
-            //mettere canzoni con singole
+            //mettere canzoni singole
             switch (Choise){
                 case 1:{
 
@@ -88,8 +84,7 @@ public class RegistraPlaylist{
                             if(titolo.equals(brani[i])){
                                 trovato=true;
                                 pw.println(brani[i] + "," + autori[i] + "," + anno[i]);
-                            }
-                        }
+                        } }
     
                         if(trovato==false){
                             System.out.println("Il brano cercato non esiste.");
@@ -159,11 +154,11 @@ public class RegistraPlaylist{
                     
                     if(trovato==false){
                         System.out.println("Non c'è nessun brano dell'anno cercato");
-                        Sleep.wait(3500);
+                        
 
                     }else{
                         System.out.println("Tutti i brani dell'anno " + an + " sono stati aggiunti alla playlist!");
-                        Sleep.wait(3500);
+                        
 
                     }
 
@@ -173,7 +168,7 @@ public class RegistraPlaylist{
 
                 default:{
                     System.out.println("\nScelta non valida\n");
-                    Sleep.wait(3500);
+                    
 
                     break;
                 }
@@ -188,23 +183,22 @@ public class RegistraPlaylist{
 
         catch(FileNotFoundException e){
             System.out.println("File non trovato!");
-            Sleep.wait(3500);
+            
 
         }
 
         catch(IOException e){
             System.out.println("Si è verificato un problema!");
-            Sleep.wait(3500);
+            
 
         }
 
         catch(Exception e){
             System.out.println("Si è verificato un problema!");
-            Sleep.wait(3500);
+         
 
         }
 
         
-        scan.close();
     }
 }
