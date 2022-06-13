@@ -10,8 +10,8 @@ import java.util.Scanner;
 public class RegistraPlaylist{
     public static void main(String[] args){
         
-        String path1="C:\\Users\\marco\\Desktop\\Prog Java\\EmotionalSongs\\Canzoni.dati.csv";
-        String path2="C:\\Users\\marco\\Desktop\\Prog Java\\EmotionalSongs\\CreaPlaylistProva.csv";
+        String path1="Canzoni.dati.csv";
+        String path2="CreaPlaylistProva.csv";
         String line="";
         Scanner scan=new Scanner(System.in);
 
