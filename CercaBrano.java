@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Semplice classe per testare i file csv per capire come gestire l'elenco delle canzoni
 */
-public class Reader {
+public class CercaBrano {
 
     static Scanner scanner = new Scanner(System.in);
     public static void main(String args[]){  
