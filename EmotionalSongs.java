@@ -1,6 +1,6 @@
 import java.io.FileNotFoundException;
 import java.util.*;
-/**All’avvio l’applicazione mostra un menu iniziale dove:
+/*All’avvio l’applicazione mostra un menu iniziale dove:
 Tutti possono:
 • cercare brani con titolo, autore, anno
 • visualizzare le emozioni associate a ciascuna canzone selezionata
@@ -10,6 +10,10 @@ Gli utenti registrati possono:
 • inserire le emozioni provate all’ascolto di determinate canzoni*/
 
 public class EmotionalSongs {
+    public static void main(String[] args) throws FileNotFoundException{
+        DisplayMenu();
+        
+}
 
     static Scanner scan=new Scanner(System.in);
 
@@ -75,7 +79,7 @@ public class EmotionalSongs {
                         System.out.println("Credenziali di accesso errate!\n");
                         Sleep.wait(3500);
                     }
-                    
+                    //visibile solo per chi ha fatto l'accesso ma non deve farlo ogni volta
                     break;
                 }
                 case 5:{
@@ -93,10 +97,4 @@ public class EmotionalSongs {
         }   
     }
 
-
-
-    public static void main(String[] args) throws FileNotFoundException{
-        DisplayMenu();
-        
-}
 }
