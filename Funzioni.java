@@ -15,68 +15,65 @@ public class Funzioni {
     static String pathSong = "Canzoni.dati.csv";
     static String pathPlaylist = "CreaPlaylistProva.csv";
     static Boolean registrare = false;
-
+    
 
     public static void cercaBranoMusicale(){
 
-        
-        System.out.println("\nCosa si desidera fare?\n \n1- Ricerca per Brano\n \n2- Ricerca per Autore\n \n3- Ricerca per Anno\n \n");
-        System.out.println("Scegliere un opzione (1, 2, 3):");
-        int scelta = scanner.nextInt();
-        
+        try{
+
+            FileWriter fw = new FileWriter(pathPlaylist,true);
+            BufferedWriter bw=new BufferedWriter(fw);
+            PrintWriter pw=new PrintWriter(bw);
+            System.out.println("\nCosa si desidera fare?\n \n1- Ricerca per Brano\n \n2- Ricerca per Autore\n \n3- Ricerca per Anno\n \n");
+            System.out.println("Scegliere un opzione (1, 2, 3):");
+            int scelta = scanner.nextInt();
+            String nomePlaylist = "";
+
         switch(scelta){
 
             //ricerca per nome
-
+            
             case 1: {
+                
                 try {
-
+                    
+                    if(registrare ==  true){
+                        System.out.println("\nQui potrai creare le tue playlist. Iniziamo!");
+                        System.out.println("Inserisci il nome della playlist");
+                        nomePlaylist = scanner.next(); 
+                        System.out.println(nomePlaylist);
+                        
+                    }
 
                     String [] nextLine;
                     String[] output;
                     String checkers;    
-                    int SkipFirstLine=0;
-                    int Counter=0;
+                    Boolean Counter = false;
                     CSVReader reader = new CSVReader(new FileReader(pathSong));
 
                     System.out.println("\nBrano da cercare:");
                     String SongToFind = scanner.next();
                     System.out.println("");
 
-
-
-                    while ((nextLine = reader.readNext()) != null)
-
-                    {
+                    while ((nextLine = reader.readNext()) != null){
                        
-                        checkers= Arrays.toString(nextLine);
+                        checkers= Arrays.toString(nextLine).replace("[", "").replace("]", "");
+                        
                         output = checkers.split(",");
                         
-                        if (SkipFirstLine!=0){
-                            if (output[0].contains(SongToFind)){
+                        if (output[0].contains(SongToFind)){
                                 System.out.println(output[0]);
-                                Counter=Counter+1;
-                                if(registrare = true){
-                                    //registre anche sulla playlist
+                                Counter = true;
+                                if(registrare == true){
+                                    
+                                    pw.println(EmotionalSongs.nomeUtente+ "," + nomePlaylist+ "," + output[0] + "," + output[1] + "," + output[2]);
                                 }
                             }
-                                
-                        }
-
-                        SkipFirstLine+=1;
                     }     
-                    
-                    
-
-                    Sleep.wait(3500);
-
-                    if (Counter==0){
+                    if (Counter == false){
                         System.out.println("\nNessun brano corrispondente trovato\n");
 
                     }
-
-                    Sleep.wait(3500);
-                    System.out.println("\n");
 
                 }
 
@@ -206,73 +203,63 @@ public class Funzioni {
                     System.out.println("Opzione non valida");
                 
             }
-        }        
+        } 
+        pw.flush();
+        bw.close();
+        pw.close();
+    
+      } catch(FileNotFoundException e){
+            System.out.println("File non trovato!");
+            
+
+        }
+
+        catch(IOException e){
+            System.out.println("Si è verificato un problema!");
+            
+
+        }
+
+        catch(Exception e){
+            System.out.println("Si è verificato un problema!");
+         
+
+        }  
     }
 
     public static void RegistraPlaylist(){
         
-        
-        int maxSong = 980;
-        
-        String buffer = "";
-        String[] brani = new String[maxSong];
-        String[] autori = new String[maxSong];
-        String[] anno = new String[maxSong];
-        
-        int i=0;  //numero totale di canzoni nella lista
-        
         try{
             
-            BufferedReader br=new BufferedReader(new FileReader(pathSong));
+            registrare=true;
+            cercaBranoMusicale();
+
+
             
-            while((buffer = br.readLine()) != null){
-                String[] val = buffer.split(",");
+    
 
-                brani[i]=val[0];
-                autori[i]=val[1];
-                anno[i]=val[2];
-
-                i++;
-            }
-
-            System.out.println("\nQui potrai creare le tue playlist. Iniziamo!");
-            System.out.println("Inserisci il tuo nome, così gli altri utenti sapranno che questa playlist è stata creata da te.");
-            String nomeUtente = scanner.nextLine();
-            System.out.println("\n");
-
-
-            System.out.println("Inserisci il nome della playlist");
-            String nomePlaylist = scanner.nextLine();
-            System.out.println();
-
-
-            System.out.println("Cosa si desidera fare?\n \n1- Comporre la playlist inserendo brani a tua scelta.\n \n2- Comporre la playlist inserendo tutti i brani di un autore a tua scelta.\n \n3- Comporre la playlist inserendo tutti i brani di anno a tua scelta.\n \n");
-            System.out.println("Scegliere un opzione (1, 2, 3):");
-            int Choise = scanner.nextInt();
-            scanner.nextLine();
+            
+            /*System.out.println("Cosa si desidera fare?\n \n1- Comporre la playlist inserendo brani a tua scelta.\n \n2- Comporre la playlist inserendo tutti i brani di un autore a tua scelta.\n \n3- Comporre la playlist inserendo tutti i brani di anno a tua scelta.\n \n");
 
             
             //parte di creazione della playlist
             
+           
+           
             
-            FileWriter fw = new FileWriter(pathPlaylist,true);
-            BufferedWriter bw=new BufferedWriter(fw);
-            PrintWriter pw=new PrintWriter(bw);
-            pw.println();
-            pw.print(nomePlaylist);
-            pw.println("\t" + nomeUtente);
-            pw.println(brani[0] + "," + autori[0] + "," + anno[0]);
-            
-            
+            int brani [] = new int[980];
+            int autori[]= new int[980];
+            int anno[]= new int[980];
+
             boolean trovato=false;
             int k=1;
             String titolo="";
-            
+            int i=0;
             //mettere canzoni singole
-            switch (Choise){
+           /*  switch (Choise){
                 case 1:{
-
-                    System.out.println("Inserisci le canzoni. Quando hai terminato l'inserimento digita\"0\"");
+                   
+                    /*System.out.println("Inserisci le canzoni. Quando hai terminato l'inserimento digita\"0\"");
 
                     do{
                         System.out.println("Cerca il titolo della " + k +"^ canzone da inserire nella playlist");
@@ -302,8 +289,8 @@ public class Funzioni {
                         k++;
                         trovato=false;
                     }while(!(titolo.equals("0")));
-
-                    break;
+                    */
+               /*      break;
 
                 }
     
@@ -373,32 +360,18 @@ public class Funzioni {
 
             }
             
-            pw.flush();
-            br.close();
-            pw.close();
-        
+    
         }
+        /* */
 
-        catch(FileNotFoundException e){
-            System.out.println("File non trovato!");
-            
 
-        }
-
-        catch(IOException e){
-            System.out.println("Si è verificato un problema!");
-            
-
-        }
-
-        catch(Exception e){
+        }catch(Exception e){
             System.out.println("Si è verificato un problema!");
          
 
         }
-
-        
     }
+       
 
     public static void inserisciEmozioniBrano(){
         //una volta loggato puoi accedere a questa funzione e cercare playlist e confrontare con nome utente se 

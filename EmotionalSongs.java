@@ -10,6 +10,8 @@ Gli utenti registrati possono:
 • inserire le emozioni provate all’ascolto di determinate canzoni*/
 
 public class EmotionalSongs {
+    public static String nomeUtente = null;
+
     public static void main(String[] args) throws FileNotFoundException{
         DisplayMenu();
         
@@ -29,7 +31,7 @@ public class EmotionalSongs {
 
             switch(Choise){
                 case 1: {
-                    CercaBrano.cercaBranoMusicale();
+                    Funzioni.cercaBranoMusicale();
                     break;
                 }
                 case 2:{
@@ -54,7 +56,8 @@ public class EmotionalSongs {
                     System.out.println("Inseririe Password:");
                     String PasswordId2=scan.nextLine();
                     Boolean LoginValidator=LoginChecker.LoginCheckNew(UserdId2,PasswordId2);
-
+                    nomeUtente = UserdId2;
+                    
                     if (LoginValidator==true){
                             
                             System.out.println("\nLogin effettuato con successo!\n \n");
@@ -66,7 +69,8 @@ public class EmotionalSongs {
 
                             switch(LoggedChoise){
                                 case 1:{
-                                    RegistraPlaylist.Registra();
+                                    
+                                    Funzioni.RegistraPlaylist();
                                     break;
                                 }
                                 case 2:{
