@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 /*All’avvio l’applicazione mostra un menu iniziale dove:
 Tutti possono:
@@ -9,17 +10,19 @@ Gli utenti registrati possono:
 • creare playlist
 • inserire le emozioni provate all’ascolto di determinate canzoni*/
 
+import com.opencsv.exceptions.CsvValidationException;
+
 public class EmotionalSongs {
     public static String nomeUtente = null;
 
-    public static void main(String[] args) throws FileNotFoundException{
+    public static void main(String[] args) throws CsvValidationException, IOException{
         DisplayMenu();
         
 }
 
     static Scanner scan=new Scanner(System.in);
 
-    public static void DisplayMenu() throws FileNotFoundException{
+    public static void DisplayMenu() throws CsvValidationException, IOException{
         boolean continua = true;
 
         while(continua==true){
@@ -35,7 +38,8 @@ public class EmotionalSongs {
                     break;
                 }
                 case 2:{
-                    System.out.println("Benvenuti in EmotionaSongs");
+
+                    Funzioni.visualizzaEmozioneBrano();
                     break;
                 }
                 case 3:{
@@ -74,7 +78,7 @@ public class EmotionalSongs {
                                     break;
                                 }
                                 case 2:{
-                                    System.out.println("Benvenuti in EmotionaSongs");
+                                    Funzioni.inserisciEmozioniBrano();
                                     break;
                                 }
                             }

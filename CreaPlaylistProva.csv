@@ -1,240 +1,96 @@
-PLAYLIST CREATE
-
-admin,,[Love In An Elevator, Aerosmith, 1989]
-admin,,[Cradle of Love, Billy Idol, 1990]
-admin,,[I Love the Night, Blue Oyster Cult, 1977]
-admin,,[One Love, Bob Marley, 1977]
-admin,,[You Give Love A Bad Name, Bon Jovi, 1986]
-admin,,[Modern Love, David Bowie, 1983]
-admin,,[Love Bites, Def Leppard, 1987]
-admin,,[Expresso Love, Dire Straits, 1980]
-admin,,[Love Is Like A Rock, Donnie Iris, 1981]
-admin,,[Victim of Love, Eagles, 1976]
-admin,,[Fooled around and Fell in Love, Elvin Bishop, 1975]
-admin,,[Bad Love, Eric Clapton, 1989]
-admin,,[I Want to Know What Love Is, Foreigner, 1984]
-admin,,[Used To Love Her, Guns N' Roses, 1988]
-admin,,[I Love Rock 'n Roll, Joan Jett, 1981]
-admin,,[I Need A Lover, John Mellencamp, 1978]
-admin,,[Send Her My Love, Journey, 1983]
-admin,,[Calling Dr. Love, Kiss, 1976]
-admin,,[All My Love, Led Zeppelin, 1979]
-admin,,[Love Hurts, Nazareth, 1976]
-admin,,[Don't Tell Me You Love Me, Night Ranger, 1982]
-admin,,[Love Is A Battlefield, Pat Benatar, 1983]
-admin,,[Silly Love Songs, Paul McCartney & Wings, 1976]
-admin,,[50 Ways to Leave Your Lover, Paul Simon, 1975]
-admin,,[Let My Love Open the Door, Pete Townshend, 1980]
-admin,,[Crazy Little Thing Called Love, Queen, 1979]
-admin,,[Somebody To Love, Queen, 1976]
-admin,,[The One I Love, R.E.M., 1987]
-admin,,[Addicted to Love, Robert Palmer, 1985]
-admin,,[Tainted Love, Soft Cell, 1981]
-admin,,[Jungle Love, Steve Miller Band, 1977]
-admin,,[Higher Love, Steve Winwood, 1986]
-admin,,[Interstate Love Song, Stone Temple Pilots, 1994]
-admin,,[Love Is Like Oxygen, Sweet, 1978]
-admin,,[Love Song, Tesla, 1989]
-admin,,[Love Shack, The B-52's, 1989]
-admin,,[Bye Bye Love, The Cars, 1978]
-admin,,[Your Love, The Outfield, 1985]
-admin,,[A Woman In Love, Tom Petty & The Heartbreakers, 1981]
-admin,,[Pride (In the Name of Love), U2, 1984]
-admin,,[When Love Comes to Town, U2, 1988]
-admin,,[Ain't Talkin' 'bout Love, Van Halen, 1978]
-admin,,[Love Walks In, Van Halen, 1986]
-admin,,[When It's Love, Van Halen, 1988]
-admin,,[Why Can't This Be Love, Van Halen, 1986]
-admin,,[Is This Love, Whitesnake, 1987]
-admin,Blu,[Love In An Elevator, Aerosmith, 1989]
-admin,Blu,[Cradle of Love, Billy Idol, 1990]
-admin,Blu,[I Love the Night, Blue Oyster Cult, 1977]
-admin,Blu,[One Love, Bob Marley, 1977]
-admin,Blu,[You Give Love A Bad Name, Bon Jovi, 1986]
-admin,Blu,[Modern Love, David Bowie, 1983]
-admin,Blu,[Love Bites, Def Leppard, 1987]
-admin,Blu,[Expresso Love, Dire Straits, 1980]
-admin,Blu,[Love Is Like A Rock, Donnie Iris, 1981]
-admin,Blu,[Victim of Love, Eagles, 1976]
-admin,Blu,[Fooled around and Fell in Love, Elvin Bishop, 1975]
-admin,Blu,[Bad Love, Eric Clapton, 1989]
-admin,Blu,[I Want to Know What Love Is, Foreigner, 1984]
-admin,Blu,[Used To Love Her, Guns N' Roses, 1988]
-admin,Blu,[I Love Rock 'n Roll, Joan Jett, 1981]
-admin,Blu,[I Need A Lover, John Mellencamp, 1978]
-admin,Blu,[Send Her My Love, Journey, 1983]
-admin,Blu,[Calling Dr. Love, Kiss, 1976]
-admin,Blu,[All My Love, Led Zeppelin, 1979]
-admin,Blu,[Love Hurts, Nazareth, 1976]
-admin,Blu,[Don't Tell Me You Love Me, Night Ranger, 1982]
-admin,Blu,[Love Is A Battlefield, Pat Benatar, 1983]
-admin,Blu,[Silly Love Songs, Paul McCartney & Wings, 1976]
-admin,Blu,[50 Ways to Leave Your Lover, Paul Simon, 1975]
-admin,Blu,[Let My Love Open the Door, Pete Townshend, 1980]
-admin,Blu,[Crazy Little Thing Called Love, Queen, 1979]
-admin,Blu,[Somebody To Love, Queen, 1976]
-admin,Blu,[The One I Love, R.E.M., 1987]
-admin,Blu,[Addicted to Love, Robert Palmer, 1985]
-admin,Blu,[Tainted Love, Soft Cell, 1981]
-admin,Blu,[Jungle Love, Steve Miller Band, 1977]
-admin,Blu,[Higher Love, Steve Winwood, 1986]
-admin,Blu,[Interstate Love Song, Stone Temple Pilots, 1994]
-admin,Blu,[Love Is Like Oxygen, Sweet, 1978]
-admin,Blu,[Love Song, Tesla, 1989]
-admin,Blu,[Love Shack, The B-52's, 1989]
-admin,Blu,[Bye Bye Love, The Cars, 1978]
-admin,Blu,[Your Love, The Outfield, 1985]
-admin,Blu,[A Woman In Love, Tom Petty & The Heartbreakers, 1981]
-admin,Blu,[Pride (In the Name of Love), U2, 1984]
-admin,Blu,[When Love Comes to Town, U2, 1988]
-admin,Blu,[Ain't Talkin' 'bout Love, Van Halen, 1978]
-admin,Blu,[Love Walks In, Van Halen, 1986]
-admin,Blu,[When It's Love, Van Halen, 1988]
-admin,Blu,[Why Can't This Be Love, Van Halen, 1986]
-admin,Blu,[Is This Love, Whitesnake, 1987]
-admin,ROsso,[Love In An Elevator, Aerosmith, 1989]
-admin,ROsso,[Cradle of Love, Billy Idol, 1990]
-admin,ROsso,[I Love the Night, Blue Oyster Cult, 1977]
-admin,ROsso,[One Love, Bob Marley, 1977]
-admin,ROsso,[You Give Love A Bad Name, Bon Jovi, 1986]
-admin,ROsso,[Modern Love, David Bowie, 1983]
-admin,ROsso,[Love Bites, Def Leppard, 1987]
-admin,ROsso,[Expresso Love, Dire Straits, 1980]
-admin,ROsso,[Love Is Like A Rock, Donnie Iris, 1981]
-admin,ROsso,[Victim of Love, Eagles, 1976]
-admin,ROsso,[Fooled around and Fell in Love, Elvin Bishop, 1975]
-admin,ROsso,[Bad Love, Eric Clapton, 1989]
-admin,ROsso,[You Make Loving Fun, Fleetwood Mac, 1977]
-admin,ROsso,[I Want to Know What Love Is, Foreigner, 1984]
-admin,ROsso,[Used To Love Her, Guns N' Roses, 1988]
-admin,ROsso,[I Hate Myself For Loving You, Joan Jett, 1988]
-admin,ROsso,[I Love Rock 'n Roll, Joan Jett, 1981]
-admin,ROsso,[I Need A Lover, John Mellencamp, 1978]
-admin,ROsso,[Lovin', Touchin' Squeezin', Journey
-admin,ROsso,[Send Her My Love, Journey, 1983]
-admin,ROsso,[Calling Dr. Love, Kiss, 1976]
-admin,ROsso,[All My Love, Led Zeppelin, 1979]
-admin,ROsso,[Love Hurts, Nazareth, 1976]
-admin,ROsso,[Don't Tell Me You Love Me, Night Ranger, 1982]
-admin,ROsso,[Love Is A Battlefield, Pat Benatar, 1983]
-admin,ROsso,[Silly Love Songs, Paul McCartney & Wings, 1976]
-admin,ROsso,[50 Ways to Leave Your Lover, Paul Simon, 1975]
-admin,ROsso,[Let My Love Open the Door, Pete Townshend, 1980]
-admin,ROsso,[Crazy Little Thing Called Love, Queen, 1979]
-admin,ROsso,[Somebody To Love, Queen, 1976]
-admin,ROsso,[The One I Love, R.E.M., 1987]
-admin,ROsso,[Keep On Loving You, REO Speedwagon, 1980]
-admin,ROsso,[Addicted to Love, Robert Palmer, 1985]
-admin,ROsso,[Bad Case Of Lovin' You, Robert Palmer, 1979]
-admin,ROsso,[Still Loving You, Scorpions, 1984]
-admin,ROsso,[Tainted Love, Soft Cell, 1981]
-admin,ROsso,[Jungle Love, Steve Miller Band, 1977]
-admin,ROsso,[Higher Love, Steve Winwood, 1986]
-admin,ROsso,[Interstate Love Song, Stone Temple Pilots, 1994]
-admin,ROsso,[Love Is Like Oxygen, Sweet, 1978]
-admin,ROsso,[Love Song, Tesla, 1989]
-admin,ROsso,[Love Shack, The B-52's, 1989]
-admin,ROsso,[Bye Bye Love, The Cars, 1978]
-admin,ROsso,[Your Love, The Outfield, 1985]
-admin,ROsso,[A Woman In Love, Tom Petty & The Heartbreakers, 1981]
-admin,ROsso,[Pride (In the Name of Love), U2, 1984]
-admin,ROsso,[When Love Comes to Town, U2, 1988]
-admin,ROsso,[Ain't Talkin' 'bout Love, Van Halen, 1978]
-admin,ROsso,[Love Walks In, Van Halen, 1986]
-admin,ROsso,[When It's Love, Van Halen, 1988]
-admin,ROsso,[Why Can't This Be Love, Van Halen, 1986]
-admin,ROsso,[Fool for Your Loving, Whitesnake, 1980]
-admin,ROsso,[Is This Love, Whitesnake, 1987]
-admin,ROsso,[Gimme All Your Lovin, ZZ Top, 1983]
-admin,UNO,[Love In An Elevator, Aerosmith, 1989]
-admin,UNO,[Cradle of Love, Billy Idol, 1990]
-admin,UNO,[I Love the Night, Blue Oyster Cult, 1977]
-admin,UNO,[One Love, Bob Marley, 1977]
-admin,UNO,[You Give Love A Bad Name, Bon Jovi, 1986]
-admin,UNO,[Modern Love, David Bowie, 1983]
-admin,UNO,[Love Bites, Def Leppard, 1987]
-admin,UNO,[Expresso Love, Dire Straits, 1980]
-admin,UNO,[Love Is Like A Rock, Donnie Iris, 1981]
-admin,UNO,[Victim of Love, Eagles, 1976]
-admin,UNO,[Fooled around and Fell in Love, Elvin Bishop, 1975]
-admin,UNO,[Bad Love, Eric Clapton, 1989]
-admin,UNO,[I Want to Know What Love Is, Foreigner, 1984]
-admin,UNO,[Used To Love Her, Guns N' Roses, 1988]
-admin,UNO,[I Love Rock 'n Roll, Joan Jett, 1981]
-admin,UNO,[I Need A Lover, John Mellencamp, 1978]
-admin,UNO,[Send Her My Love, Journey, 1983]
-admin,UNO,[Calling Dr. Love, Kiss, 1976]
-admin,UNO,[All My Love, Led Zeppelin, 1979]
-admin,UNO,[Love Hurts, Nazareth, 1976]
-admin,UNO,[Don't Tell Me You Love Me, Night Ranger, 1982]
-admin,UNO,[Love Is A Battlefield, Pat Benatar, 1983]
-admin,UNO,[Silly Love Songs, Paul McCartney & Wings, 1976]
-admin,UNO,[50 Ways to Leave Your Lover, Paul Simon, 1975]
-admin,UNO,[Let My Love Open the Door, Pete Townshend, 1980]
-admin,UNO,[Crazy Little Thing Called Love, Queen, 1979]
-admin,UNO,[Somebody To Love, Queen, 1976]
-admin,UNO,[The One I Love, R.E.M., 1987]
-admin,UNO,[Addicted to Love, Robert Palmer, 1985]
-admin,UNO,[Tainted Love, Soft Cell, 1981]
-admin,UNO,[Jungle Love, Steve Miller Band, 1977]
-admin,UNO,[Higher Love, Steve Winwood, 1986]
-admin,UNO,[Interstate Love Song, Stone Temple Pilots, 1994]
-admin,UNO,[Love Is Like Oxygen, Sweet, 1978]
-admin,UNO,[Love Song, Tesla, 1989]
-admin,UNO,[Love Shack, The B-52's, 1989]
-admin,UNO,[Bye Bye Love, The Cars, 1978]
-admin,UNO,[Your Love, The Outfield, 1985]
-admin,UNO,[A Woman In Love, Tom Petty & The Heartbreakers, 1981]
-admin,UNO,[Pride (In the Name of Love), U2, 1984]
-admin,UNO,[When Love Comes to Town, U2, 1988]
-admin,UNO,[Ain't Talkin' 'bout Love, Van Halen, 1978]
-admin,UNO,[Love Walks In, Van Halen, 1986]
-admin,UNO,[When It's Love, Van Halen, 1988]
-admin,UNO,[Why Can't This Be Love, Van Halen, 1986]
-admin,UNO,[Is This Love, Whitesnake, 1987]
-admin,Mia,Love In An Elevator, Aerosmith, 1989
-admin,Mia,Cradle of Love, Billy Idol, 1990
-admin,Mia,I Love the Night, Blue Oyster Cult, 1977
-admin,Mia,One Love, Bob Marley, 1977
-admin,Mia,You Give Love A Bad Name, Bon Jovi, 1986
-admin,Mia,Modern Love, David Bowie, 1983
-admin,Mia,Love Bites, Def Leppard, 1987
-admin,Mia,Expresso Love, Dire Straits, 1980
-admin,Mia,Love Is Like A Rock, Donnie Iris, 1981
-admin,Mia,Victim of Love, Eagles, 1976
-admin,Mia,Fooled around and Fell in Love, Elvin Bishop, 1975
-admin,Mia,Bad Love, Eric Clapton, 1989
-admin,Mia,I Want to Know What Love Is, Foreigner, 1984
-admin,Mia,Used To Love Her, Guns N' Roses, 1988
-admin,Mia,I Love Rock 'n Roll, Joan Jett, 1981
-admin,Mia,I Need A Lover, John Mellencamp, 1978
-admin,Mia,Send Her My Love, Journey, 1983
-admin,Mia,Calling Dr. Love, Kiss, 1976
-admin,Mia,All My Love, Led Zeppelin, 1979
-admin,Mia,Love Hurts, Nazareth, 1976
-admin,Mia,Don't Tell Me You Love Me, Night Ranger, 1982
-admin,Mia,Love Is A Battlefield, Pat Benatar, 1983
-admin,Mia,Silly Love Songs, Paul McCartney & Wings, 1976
-admin,Mia,50 Ways to Leave Your Lover, Paul Simon, 1975
-admin,Mia,Let My Love Open the Door, Pete Townshend, 1980
-admin,Mia,Crazy Little Thing Called Love, Queen, 1979
-admin,Mia,Somebody To Love, Queen, 1976
-admin,Mia,The One I Love, R.E.M., 1987
-admin,Mia,Addicted to Love, Robert Palmer, 1985
-admin,Mia,Tainted Love, Soft Cell, 1981
-admin,Mia,Jungle Love, Steve Miller Band, 1977
-admin,Mia,Higher Love, Steve Winwood, 1986
-admin,Mia,Interstate Love Song, Stone Temple Pilots, 1994
-admin,Mia,Love Is Like Oxygen, Sweet, 1978
-admin,Mia,Love Song, Tesla, 1989
-admin,Mia,Love Shack, The B-52's, 1989
-admin,Mia,Bye Bye Love, The Cars, 1978
-admin,Mia,Your Love, The Outfield, 1985
-admin,Mia,A Woman In Love, Tom Petty & The Heartbreakers, 1981
-admin,Mia,Pride (In the Name of Love), U2, 1984
-admin,Mia,When Love Comes to Town, U2, 1988
-admin,Mia,Ain't Talkin' 'bout Love, Van Halen, 1978
-admin,Mia,Love Walks In, Van Halen, 1986
-admin,Mia,When It's Love, Van Halen, 1988
-admin,Mia,Why Can't This Be Love, Van Halen, 1986
-admin,Mia,Is This Love, Whitesnake, 1987
+PLAYLIST CREATEadmin,Seconda,Love In An Elevator, Aerosmith, 1989
+admin,Seconda,Cradle of Love, Billy Idol, 1990
+admin,Seconda,I Love the Night, Blue Oyster Cult, 1977
+admin,Seconda,One Love, Bob Marley, 1977
+admin,Seconda,You Give Love A Bad Name, Bon Jovi, 1986
+admin,Seconda,Modern Love, David Bowie, 1983
+admin,Seconda,Love Bites, Def Leppard, 1987
+admin,Seconda,Expresso Love, Dire Straits, 1980
+admin,Seconda,Love Is Like A Rock, Donnie Iris, 1981
+admin,Seconda,Victim of Love, Eagles, 1976
+admin,Seconda,Fooled around and Fell in Love, Elvin Bishop, 1975
+admin,Seconda,Bad Love, Eric Clapton, 1989
+admin,Seconda,I Want to Know What Love Is, Foreigner, 1984
+admin,Seconda,Used To Love Her, Guns N' Roses, 1988
+admin,Seconda,I Love Rock 'n Roll, Joan Jett, 1981
+admin,Seconda,I Need A Lover, John Mellencamp, 1978
+admin,Seconda,Send Her My Love, Journey, 1983
+admin,Seconda,Calling Dr. Love, Kiss, 1976
+admin,Seconda,All My Love, Led Zeppelin, 1979
+admin,Seconda,Love Hurts, Nazareth, 1976
+admin,Seconda,Don't Tell Me You Love Me, Night Ranger, 1982
+admin,Seconda,Love Is A Battlefield, Pat Benatar, 1983
+admin,Seconda,Silly Love Songs, Paul McCartney & Wings, 1976
+admin,Seconda,50 Ways to Leave Your Lover, Paul Simon, 1975
+admin,Seconda,Let My Love Open the Door, Pete Townshend, 1980
+admin,Seconda,Crazy Little Thing Called Love, Queen, 1979
+admin,Seconda,Somebody To Love, Queen, 1976
+admin,Seconda,The One I Love, R.E.M., 1987
+admin,Seconda,Addicted to Love, Robert Palmer, 1985
+admin,Seconda,Tainted Love, Soft Cell, 1981
+admin,Seconda,Jungle Love, Steve Miller Band, 1977
+admin,Seconda,Higher Love, Steve Winwood, 1986
+admin,Seconda,Interstate Love Song, Stone Temple Pilots, 1994
+admin,Seconda,Love Is Like Oxygen, Sweet, 1978
+admin,Seconda,Love Song, Tesla, 1989
+admin,Seconda,Love Shack, The B-52's, 1989
+admin,Seconda,Bye Bye Love, The Cars, 1978
+admin,Seconda,Your Love, The Outfield, 1985
+admin,Seconda,A Woman In Love, Tom Petty & The Heartbreakers, 1981
+admin,Seconda,Pride (In the Name of Love), U2, 1984
+admin,Seconda,When Love Comes to Town, U2, 1988
+admin,Seconda,Ain't Talkin' 'bout Love, Van Halen, 1978
+admin,Seconda,Love Walks In, Van Halen, 1986
+admin,Seconda,When It's Love, Van Halen, 1988
+admin,Seconda,Why Can't This Be Love, Van Halen, 1986
+admin,Seconda,Is This Love, Whitesnake, 1987
+admin,brano,Love In An Elevator, Aerosmith, 1989
+admin,brano,Cradle of Love, Billy Idol, 1990
+admin,brano,I Love the Night, Blue Oyster Cult, 1977
+admin,brano,One Love, Bob Marley, 1977
+admin,brano,You Give Love A Bad Name, Bon Jovi, 1986
+admin,brano,Modern Love, David Bowie, 1983
+admin,brano,Love Bites, Def Leppard, 1987
+admin,brano,Expresso Love, Dire Straits, 1980
+admin,brano,Love Is Like A Rock, Donnie Iris, 1981
+admin,brano,Victim of Love, Eagles, 1976
+admin,brano,Fooled around and Fell in Love, Elvin Bishop, 1975
+admin,brano,Bad Love, Eric Clapton, 1989
+admin,brano,I Want to Know What Love Is, Foreigner, 1984
+admin,brano,Used To Love Her, Guns N' Roses, 1988
+admin,brano,I Love Rock 'n Roll, Joan Jett, 1981
+admin,brano,I Need A Lover, John Mellencamp, 1978
+admin,brano,Send Her My Love, Journey, 1983
+admin,brano,Calling Dr. Love, Kiss, 1976
+admin,brano,All My Love, Led Zeppelin, 1979
+admin,brano,Love Hurts, Nazareth, 1976
+admin,brano,Don't Tell Me You Love Me, Night Ranger, 1982
+admin,brano,Love Is A Battlefield, Pat Benatar, 1983
+admin,brano,Silly Love Songs, Paul McCartney & Wings, 1976
+admin,brano,50 Ways to Leave Your Lover, Paul Simon, 1975
+admin,brano,Let My Love Open the Door, Pete Townshend, 1980
+admin,brano,Crazy Little Thing Called Love, Queen, 1979
+admin,brano,Somebody To Love, Queen, 1976
+admin,brano,The One I Love, R.E.M., 1987
+admin,brano,Addicted to Love, Robert Palmer, 1985
+admin,brano,Tainted Love, Soft Cell, 1981
+admin,brano,Jungle Love, Steve Miller Band, 1977
+admin,brano,Higher Love, Steve Winwood, 1986
+admin,brano,Interstate Love Song, Stone Temple Pilots, 1994
+admin,brano,Love Is Like Oxygen, Sweet, 1978
+admin,brano,Love Song, Tesla, 1989
+admin,brano,Love Shack, The B-52's, 1989
+admin,brano,Bye Bye Love, The Cars, 1978
+admin,brano,Your Love, The Outfield, 1985
+admin,brano,A Woman In Love, Tom Petty & The Heartbreakers, 1981
+admin,brano,Pride (In the Name of Love), U2, 1984
+admin,brano,When Love Comes to Town, U2, 1988
+admin,brano,Ain't Talkin' 'bout Love, Van Halen, 1978
+admin,brano,Love Walks In, Van Halen, 1986
+admin,brano,When It's Love, Van Halen, 1988
+admin,brano,Why Can't This Be Love, Van Halen, 1986
+admin,brano,Is This Love, Whitesnake, 1987
+admin,Elvis,Alison, Elvis Costello, 1977
+admin,Elvis,Pump It Up, Elvis Costello, 1978
+admin,Elvis,Veronica, Elvis Costello, 1989
+admin,Anno,Rockin' Into the Night, .38 Special, 1980
