@@ -364,7 +364,7 @@ public class Funzioni {
 
     cioe ricerca nel brano nel file emozioni e per ogni emozione numero di utenti e media voto
     */
-    
+    CSVReader reader = new CSVReader(new FileReader(pathEmozioni));
     int votoAmazement = 0;
     int votoSolemnity = 0;
     int votoTenderness = 0;
@@ -375,38 +375,35 @@ public class Funzioni {
     int votoTension = 0;
     int votoSadness = 0;
     int numeroPersone = 0;
-    
-    try{
+
         System.out.println("Brano da cercare:");
         String brano = scanner.nextLine();
-        CSVReader reader = new CSVReader(new FileReader("Emozioni.dati.csv"));
         String [] nextLine;
         String[] output;
         String checkers;
+
         while ((nextLine = reader.readNext()) != null)
         {
-            checkers= Arrays.toString(nextLine);
+            checkers= Arrays.toString(nextLine).replace("[", "").replace("]", "");
             output = checkers.split(",");
-            
-            System.out.println(brano);
+
             if(output[2].contains(brano)){
-                votoAmazement =+ Integer.parseInt(output[3]);
-                votoSolemnity =+ Integer.parseInt(output[4]);
-                votoTenderness =+ Integer.parseInt(output[5]);
-                votoNostalgia =+ Integer.parseInt(output[6]);
-                votoCalmness =+ Integer.parseInt(output[7]);
-                votoPower =+ Integer.parseInt(output[8]);
-                votoJoy =+ Integer.parseInt(output[9]);
-                votoTension =+ Integer.parseInt(output[10]);
-                votoSadness =+ Integer.parseInt(output[11]);
-                numeroPersone++;
+                
+                votoAmazement += Integer.parseInt(output[3].trim());;
+                votoSolemnity += Integer.parseInt(output[4].trim());
+                votoTenderness += Integer.parseInt(output[5].trim());
+                votoNostalgia += Integer.parseInt(output[6].trim());
+                votoCalmness += Integer.parseInt(output[7].trim());
+                votoPower += Integer.parseInt(output[8].trim());
+                votoJoy += Integer.parseInt(output[9].trim());
+                votoTension += Integer.parseInt(output[10].trim());
+                votoSadness += Integer.parseInt(output[11].trim());
+                numeroPersone++;}
+
             }
 
-    } 
-    }catch (Exception e) {
-        System.out.println("File non trovato");
-        e.printStackTrace();  
-    }  
+    
+  
     if(numeroPersone == 0){
         System.out.println("Nessuno ha inserito emozioni per questo brano");
     }
@@ -437,5 +434,3 @@ public class Funzioni {
 }
 
 }
-
-
