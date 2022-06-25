@@ -1,29 +1,23 @@
-import java.io.FileReader;
-import com.opencsv.CSVReader;
+import java.io.*;
+import com.opencsv.*;
 import com.opencsv.exceptions.CsvValidationException;
-
 import java.util.*;
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
 
 public class Funzioni {
     
     static Scanner scanner = new Scanner(System.in);
     static String pathSong = "Canzoni.dati.csv";
     static String pathPlaylist = "CreaPlaylistProva.csv";
-    static Boolean registrare = false;
     static String pathEmozioni = "Emozioni.dati.csv";
+    static Boolean registrarePlaylist = false;
+
     public static void cercaBranoMusicale(){
 
         try{
+            FileWriter fileWriter = new FileWriter(pathPlaylist,true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            PrintWriter printWriter = new PrintWriter(bufferedWriter);
 
-            FileWriter fw = new FileWriter(pathPlaylist,true);
-            BufferedWriter bw=new BufferedWriter(fw);
-            PrintWriter pw=new PrintWriter(bw);
             System.out.println("\nCosa si desidera fare?\n \n1- Ricerca per Brano\n \n2- Ricerca per Autore\n \n3- Ricerca per Anno\n\n");
             System.out.println("Scegliere un opzione (1, 2, 3):");
             int scelta = scanner.nextInt();
@@ -37,39 +31,37 @@ public class Funzioni {
                 
                 try {
                     
-                    if(registrare ==  true){
+                    if(registrarePlaylist ==  true){
                         System.out.println("\nQui potrai creare le tue playlist. Iniziamo!");
                         System.out.println("Inserisci il nome della playlist");
                         nomePlaylist = scanner.next(); 
-
                     }
 
-                    String [] nextLine;
+                    String [] nextLinea;
                     String[] output;
                     String checkers;    
-                    Boolean Counter = false;
+                    Boolean branoNonTrovato = false;
                     CSVReader reader = new CSVReader(new FileReader(pathSong));
 
                     System.out.println("\nBrano da cercare:");
-                    String SongToFind = scanner.next();
+                    String branoDaTrovare = scanner.next();
                     System.out.println("");
 
-                    while ((nextLine = reader.readNext()) != null){
+                    while ((nextLinea = reader.readNext()) != null){
                        
-                        checkers= Arrays.toString(nextLine).replace("[", "").replace("]", "");
-                        
+                        checkers= Arrays.toString(nextLinea).replace("[", "").replace("]", "");  
                         output = checkers.split(",");
                         
-                        if (output[0].contains(SongToFind)){
+                        if (output[0].contains(branoDaTrovare)){
                                 System.out.println(output[0]);
-                                Counter = true;
-                                if(registrare == true){
+                                branoNonTrovato = true;
+                                if(registrarePlaylist == true){
                                     
-                                    pw.println(EmotionalSongs.nomeUtente+ "," + nomePlaylist+ "," + output[0] + "," + output[1] + "," + output[2]);
+                                    printWriter.println(EmotionalSongs.nomeUtente+ "," + nomePlaylist+ "," + output[0] + "," + output[1] + "," + output[2]);
                                 }
                             }
                     }     
-                    if (Counter == false){
+                    if (branoNonTrovato == false){
                         System.out.println("\nNessun brano corrispondente trovato\n");
 
                     }
@@ -87,107 +79,94 @@ public class Funzioni {
             //ricerca per autore
 
             case 2:{
+
                 try {
-                    if(registrare ==  true){
+                    if(registrarePlaylist ==  true){
                         System.out.println("\nQui potrai creare le tue playlist. Iniziamo!");
                         System.out.println("Inserisci il nome della playlist");
                         nomePlaylist = scanner.next();  
                     }
-                    String [] nextLine;
+
+                    String [] nextLinea;
                     String[] output;
                     String checkers;
-                    Boolean Counter = false;
+                    Boolean branoNonTrovato = false;
                     CSVReader reader = new CSVReader(new FileReader(pathSong));
 
                     System.out.println("Autore da cercare:");
-                    String ArtistToFind = scanner.next();
+                    String artistaDaTrovare = scanner.next();
                     System.out.println("");
     
-                    while ((nextLine = reader.readNext()) != null)
+                    while ((nextLinea = reader.readNext()) != null)
 
                     {
-                        checkers= Arrays.toString(nextLine).replace("[", "").replace("]", "");
+                        checkers= Arrays.toString(nextLinea).replace("[", "").replace("]", "");
                         output = checkers.split(",");
                         
-                            if (output[1].contains(ArtistToFind)){
+                            if (output[1].contains(artistaDaTrovare)){
                                 System.out.println(output[0]);
-                                Counter = true;
-                                if(registrare == true){
-                                    pw.println(EmotionalSongs.nomeUtente+ "," + nomePlaylist+ "," + output[0] + "," + output[1] + "," + output[2]);}
+                                branoNonTrovato = true;
+                                if(registrarePlaylist == true){
+                                    printWriter.println(EmotionalSongs.nomeUtente+ "," + nomePlaylist+ "," + output[0] + "," + output[1] + "," + output[2]);}
                             }
                     } 
 
-                    Sleep.wait(3500);
-
-                    if (Counter == false){
+                    if (branoNonTrovato == false){
                         System.out.println("\nNessun brano corrispondente trovato\n");
 
                     }
 
-
                 }
-
-                
-
                 catch (Exception e) {
                     System.out.println("File non trovato");
                     e.printStackTrace();  
                 }
-                
                 break;
             }
-
-                
-            
 
             //ricerca per anno
 
             case 3:{
                 try {
-                    if(registrare ==  true){
+
+                    if(registrarePlaylist ==  true){
                         System.out.println("\nQui potrai creare le tue playlist. Iniziamo!");
                         System.out.println("Inserisci il nome della playlist");
                         nomePlaylist = scanner.next();  
                     }
-                    String [] nextLine;
+
+                    String [] nextLinea;
                     String[] output;
                     String checkers;
-                    Boolean Counter = false;
+                    Boolean branoNonTrovato = false;
 
                     CSVReader reader = new CSVReader(new FileReader(pathSong));
 
                     System.out.println("Anno da cercare:");
-                    String YearsToFind = scanner.next();
+                    String annoDaTrovare = scanner.next();
                     System.out.println(" ");
 
-    
-                    while ((nextLine = reader.readNext()) != null)
+                    while ((nextLinea = reader.readNext()) != null)
 
                     {
                        
-                        checkers= Arrays.toString(nextLine).replace("[", "").replace("]", "");
+                        checkers= Arrays.toString(nextLinea).replace("[", "").replace("]", "");
                         output = checkers.split(",");
                         
-                            if (output[2].contains(YearsToFind)){
+                            if (output[2].contains(annoDaTrovare)){
                                 System.out.println(output[0]);
-                                Counter = true;
-                                if(registrare == true){
-                                    pw.println(EmotionalSongs.nomeUtente+ "," + nomePlaylist+ "," + output[0] + "," + output[1] + "," + output[2]);}
+                                branoNonTrovato = true;
+                                if(registrarePlaylist == true){
+                                    printWriter.println(EmotionalSongs.nomeUtente+ "," + nomePlaylist+ "," + output[0] + "," + output[1] + "," + output[2]);}
                             }
 
                     } 
 
-                    Sleep.wait(3500);
-
-                    if (Counter == false){
+                    if (branoNonTrovato == false){
                         System.out.println("\nNessun brano corrispondente trovato\n");
 
                     }
                     
-                    Sleep.wait(3500);
-                    System.out.println("\n");
-
-
                 }
 
                 
@@ -201,29 +180,23 @@ public class Funzioni {
             
             default:{
                     System.out.println("Opzione non valida");
-                
             }
         } 
-        pw.flush();
-        bw.close();
-        pw.close();
-    
-      } catch(FileNotFoundException e){
-            System.out.println("File non trovato!");
-            
 
+        printWriter.flush();
+        bufferedWriter.close();
+        printWriter.close();
+    
+        } catch(FileNotFoundException e){
+            System.out.println("File non trovato!");
         }
 
         catch(IOException e){
             System.out.println("Si è verificato un problema!");
-            
-
         }
 
         catch(Exception e){
             System.out.println("Si è verificato un problema!");
-         
-
         }  
     }
 
@@ -231,7 +204,7 @@ public class Funzioni {
         
         try{
             
-            registrare=true;
+            registrarePlaylist=true;
             cercaBranoMusicale();
 
         }catch(Exception e){
@@ -239,118 +212,112 @@ public class Funzioni {
         }
     }
        
-
     public static void inserisciEmozioniBrano() throws IOException, CsvValidationException{
         //una volta loggato puoi accedere a questa funzione e cercare playlist e confrontare con nome utente se 
         //esiste iniziare
         //chiedere per ogni canzoni della playlist se e' si vuole inserire una emozione
-        FileWriter fw = new FileWriter(pathEmozioni,true);
-        BufferedWriter bw=new BufferedWriter(fw);
-        PrintWriter pw=new PrintWriter(bw);
+        FileWriter fileWriter = new FileWriter(pathEmozioni,true);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        PrintWriter printWriter = new PrintWriter(bufferedWriter);
         
         CSVReader reader = new CSVReader(new FileReader(pathPlaylist));
-                String [] nextLine;
-                String[] output;
-                String checkers;
+        String [] nextLinea;
+        String[] output;
+        String checkers;
                     
-                System.out.println("Nome Playlist registrata in precedenza da cercare:");
-                String nomePlaylist2String = scanner.next();
+        System.out.println("Nome Playlist registrata in precedenza da cercare:");
+        String nomePlaylist = scanner.next();
 
-                    while ((nextLine = reader.readNext()) != null)
-                    {
-                        checkers= Arrays.toString(nextLine).replace("[", "").replace("]", "");
-                        output = checkers.split(",");
-                            if (output[0].equals(EmotionalSongs.nomeUtente)){
+        while ((nextLinea = reader.readNext()) != null){
+            
+            checkers= Arrays.toString(nextLinea).replace("[", "").replace("]", "");
+            output = checkers.split(",");
+            
+            if (output[0].equals(EmotionalSongs.nomeUtente)){
 
-                                if(output[1].contains(nomePlaylist2String)){
+                if(output[1].contains(nomePlaylist)){
                                     //chiedere se si vuole inserire emozione per canzone
-                                    System.out.println("4");
+                    System.out.println("4");
                                     //file emozione nome-playlist-canzone-emozioni
-                                    System.out.println("Vuoi inseire emozioni per la canzone" + output[2]);
-                                    System.out.println("1-Si,0-No");
-                                    int decisione = scanner.nextInt();
-                                    int risposta = 0;
-                                    if( decisione == 1){
-                                        System.out.println("Dare valutazioni da 1 a 5 per le seguenti emozioni provate");
-                                        //3 Amazemant
-                                        do{
-                                            System.out.println("Amazemant,Amazement Feeling of wonder or happiness");
-                                            risposta = scanner.nextInt();
-                                        }while(risposta<1 && risposta >5);
-                                        String Amazemant = String.valueOf(risposta);
+                    System.out.println("Vuoi inseire emozioni per la canzone" + output[2]);
+                    System.out.println("1-Si,0-No");
+                    int decisione = scanner.nextInt();
+                    int risposta = 0;
 
-                                        //4 Solemnity
-                                        do{
-                                            System.out.println("Solemnity Feeling of transcendence, inspiration. Thrills.");
-                                            risposta = scanner.nextInt();
-                                        }while(risposta<1 && risposta >5);
-                                        String Solemnity = String.valueOf(risposta);
+                    if( decisione == 1){
+                        
+                        System.out.println("Dare valutazioni da 1 a 5 per le seguenti emozioni provate.");
+                        //3 Amazemant
+                        do{
+                            System.out.println("Stupore: Sensazione di meraviglia o felicità.");
+                            risposta = scanner.nextInt();
+                        }while(risposta<1 && risposta >5);
+                        String Amazemant = String.valueOf(risposta);
 
-                                        //5 Tenderness
-                                        do{
-                                            System.out.println("Solemnity Feeling of transcendence, inspiration. Thrills.");
-                                            risposta = scanner.nextInt();
-                                        }while(risposta<1 && risposta >5);
-                                        String Tenderness = String.valueOf(risposta);
+                        //4 Solemnity
+                        do{
+                            System.out.println("Solennità: Sensazione di trascendenza, ispirazione.");
+                            risposta = scanner.nextInt();
+                        }while(risposta<1 && risposta >5);
+                        String Solemnity = String.valueOf(risposta);                
+                
+                        //5 Tenderness
+                        do{
+                            System.out.println("Brividi: Tenerezza Sensualità, affetto, sentimento d'amore.");
+                            risposta = scanner.nextInt();
+                        }while(risposta<1 && risposta >5);
+                        String Tenderness = String.valueOf(risposta);
                                         
-                                        //6 Nostalgia
-                                        do{
-                                            System.out.println("Solemnity Feeling of transcendence, inspiration. Thrills.");
-                                            risposta = scanner.nextInt();
-                                        }while(risposta<1 && risposta >5);
-                                        String Nostalgia = String.valueOf(risposta);
+                        //6 Nostalgia
+                        do{
+                            System.out.println("Nostalgia; Sentimenti sognanti, malinconici e sentimentali.");
+                            risposta = scanner.nextInt();
+                        }while(risposta<1 && risposta >5);
+                        String Nostalgia = String.valueOf(risposta);
 
-                                        //7 Calmness
-                                        do{
-                                            System.out.println("Solemnity Feeling of transcendence, inspiration. Thrills.");
-                                            risposta = scanner.nextInt();
-                                        }while(risposta<1 && risposta >5);
-                                        String Calmness = String.valueOf(risposta);
+                        //7 Calmness
+                        do{
+                            System.out.println("Calma: Rilassamento, serenità, meditazione.");
+                            risposta = scanner.nextInt();
+                        }while(risposta<1 && risposta >5);
+                        String Calmness = String.valueOf(risposta);
 
-                                        //8 Power
-                                        do{
-                                            System.out.println("Solemnity Feeling of transcendence, inspiration. Thrills.");
-                                            risposta = scanner.nextInt();
-                                        }while(risposta<1 && risposta >5);
-                                        String Power = String.valueOf(risposta);
+                        //8 Power
+                        do{
+                            System.out.println("Potenza: Sentirsi forte, eroico, trionfante, energico.");
+                            risposta = scanner.nextInt();
+                        }while(risposta<1 && risposta >5);
+                        String Power = String.valueOf(risposta);
 
-                                        //9 Joy
-                                        do{
-                                            System.out.println("Solemnity Feeling of transcendence, inspiration. Thrills.");
-                                            risposta = scanner.nextInt();
-                                        }while(risposta<1 && risposta >5);
-                                        String Joy = String.valueOf(risposta);
+                        //9 Joy
+                        do{
+                            System.out.println("Gioia: Sensazione di ballare, di rimbalzare, di essere animati, di divertirsi.");
+                            risposta = scanner.nextInt();
+                        }while(risposta<1 && risposta >5);
+                        String Joy = String.valueOf(risposta);
 
-                                        //10 Tension
-                                        do{
-                                            System.out.println("Solemnity Feeling of transcendence, inspiration. Thrills.");
-                                            risposta = scanner.nextInt();
-                                        }while(risposta<1 && risposta >5);
-                                        String Tension = String.valueOf(risposta);
+                        //10 Tension
+                        do{
+                            System.out.println("Tensione: Sensazione di nervosismo, impazienza, irritazione.");
+                            risposta = scanner.nextInt();
+                        }while(risposta<1 && risposta >5);
+                        String Tension = String.valueOf(risposta);
                                         
-                                        //11 Sadness
-                                        do{
-                                            System.out.println("Solemnity Feeling of transcendence, inspiration. Thrills.");
-                                            risposta = scanner.nextInt();
-                                        }while(risposta<1 && risposta >5);
-                                        String Sadness = String.valueOf(risposta);
+                        //11 Sadness
+                        do{
+                            System.out.println("Tristezza: Sensazione di depressione, tristezza.");
+                            risposta = scanner.nextInt();
+                        }while(risposta<1 && risposta >5);
+                        String Sadness = String.valueOf(risposta);
 
-                                        pw.println(EmotionalSongs.nomeUtente+","+nomePlaylist2String+","+output[2]+","+Amazemant+","+Solemnity+","+Tenderness+","+Nostalgia + "," + Calmness + "," + Power + "," + Joy + "," + Tension+ "," + Sadness);}
-                                        pw.flush();
-                                   
-                                   
-                                    } 
-                                    
-                                    }
-                                    
-                                }
-                               
-                                
-
-                    
-                    bw.close();
-                    pw.close();             
-        
+                        printWriter.println(EmotionalSongs.nomeUtente+","+nomePlaylist+","+output[2]+","+Amazemant+","+Solemnity+","+Tenderness+","+Nostalgia + "," + Calmness + "," + Power + "," + Joy + "," + Tension+ "," + Sadness);
+                    }
+                        printWriter.flush();                      
+                    }                                  
+                }                                   
+            }                 
+            bufferedWriter.close();
+            printWriter.close();             
     }
 
     public static void visualizzaEmozioneBrano() throws CsvValidationException, NumberFormatException, IOException{
@@ -365,6 +332,7 @@ public class Funzioni {
     cioe ricerca nel brano nel file emozioni e per ogni emozione numero di utenti e media voto
     */
     CSVReader reader = new CSVReader(new FileReader(pathEmozioni));
+
     int votoAmazement = 0;
     int votoSolemnity = 0;
     int votoTenderness = 0;
@@ -376,34 +344,33 @@ public class Funzioni {
     int votoSadness = 0;
     int numeroPersone = 0;
 
-        System.out.println("Brano da cercare:");
-        String brano = scanner.nextLine();
-        String [] nextLine;
-        String[] output;
-        String checkers;
+    System.out.println("Brano da cercare:");
+    String brano = scanner.nextLine();
+    String [] nextLine;
+    String[] output;
+    String checkers;
 
-        while ((nextLine = reader.readNext()) != null)
-        {
-            checkers= Arrays.toString(nextLine).replace("[", "").replace("]", "");
-            output = checkers.split(",");
+    while ((nextLine = reader.readNext()) != null){
 
-            if(output[2].contains(brano)){
+        checkers= Arrays.toString(nextLine).replace("[", "").replace("]", "");
+        output = checkers.split(",");
+
+        if(output[2].contains(brano)){
                 
-                votoAmazement += Integer.parseInt(output[3].trim());;
-                votoSolemnity += Integer.parseInt(output[4].trim());
-                votoTenderness += Integer.parseInt(output[5].trim());
-                votoNostalgia += Integer.parseInt(output[6].trim());
-                votoCalmness += Integer.parseInt(output[7].trim());
-                votoPower += Integer.parseInt(output[8].trim());
-                votoJoy += Integer.parseInt(output[9].trim());
-                votoTension += Integer.parseInt(output[10].trim());
-                votoSadness += Integer.parseInt(output[11].trim());
-                numeroPersone++;}
+            votoAmazement += Integer.parseInt(output[3].trim());;
+            votoSolemnity += Integer.parseInt(output[4].trim());
+            votoTenderness += Integer.parseInt(output[5].trim());
+            votoNostalgia += Integer.parseInt(output[6].trim());
+            votoCalmness += Integer.parseInt(output[7].trim());
+            votoPower += Integer.parseInt(output[8].trim());
+            votoJoy += Integer.parseInt(output[9].trim());
+            votoTension += Integer.parseInt(output[10].trim());
+            votoSadness += Integer.parseInt(output[11].trim());
+            numeroPersone++;
+        }
 
-            }
+    }
 
-    
-  
     if(numeroPersone == 0){
         System.out.println("Nessuno ha inserito emozioni per questo brano");
     }
@@ -430,7 +397,6 @@ public class Funzioni {
         System.out.println("Voto Medio Tristezza" + (mediaSadness) );
     }
     
-
-}
+    }
 
 }

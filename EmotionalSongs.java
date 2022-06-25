@@ -23,21 +23,26 @@ public class EmotionalSongs {
         boolean continua = true;
 
         while(continua==true){
-            System.out.println("Benvenuti in EmotionaSongs\n");
+
+            System.out.println("Benvenuti in EmotionaSongs");
             System.out.println("Cosa si desidera fare?\n1- Cercare Brano\n2- Visualizzare Emozoni\n3- Registrazione\n4- Login\n5- Registra Playlist\n6- Inserisci l'emozioni \n7- Close\n");
             System.out.println("Scegliere un opzione (1, 2, 3, 4, 5, 6, 7):");
             int Choise=scan.nextInt();
             scan.nextLine();
             Boolean LoginValidator = false;
+            
             switch(Choise){
+
                 case 1: {
                     Funzioni.cercaBranoMusicale();
                     break;
                 }
+
                 case 2:{
                     Funzioni.visualizzaEmozioneBrano();
                     break;
                 }
+
                 case 3:{
                     Boolean RegistrationStatus=Registrazione.RegistrazioneNew();
                     if (RegistrationStatus==true){
@@ -50,6 +55,7 @@ public class EmotionalSongs {
                     }
                     break;
                 }
+
                 case 4:{
                     System.out.println("Inseririe UserId:");
                     String UserdId2=scan.nextLine();
@@ -66,6 +72,7 @@ public class EmotionalSongs {
                     }
                     break;
                 }
+
                 case 5:{
                     if (LoginValidator==true){
                     Funzioni.RegistraPlaylist();}
@@ -75,6 +82,7 @@ public class EmotionalSongs {
                     }
                     break;
                 }
+
                 case 6:{
                     if (LoginValidator==true){
                         Funzioni.inserisciEmozioniBrano();}
@@ -84,11 +92,13 @@ public class EmotionalSongs {
                         }
                     break;
                 }
+
                 case 7:{
                     System.out.println("See you soon!\n");
                     continua = false;
                     break;                  
                 }
+
                 default:{
                     System.out.println("\nScelta non valida\n");
                     Sleep.wait(2000);
@@ -97,5 +107,4 @@ public class EmotionalSongs {
             }
         }   
     }
-
 }
