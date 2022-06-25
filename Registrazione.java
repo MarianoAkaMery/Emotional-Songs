@@ -7,10 +7,7 @@ import com.opencsv.CSVWriter;
 
 public class Registrazione extends LoginChecker{
 
-
     static Scanner scan=new Scanner(System.in);
-
-
     //Registration function 
     public static boolean RegistrazioneNew() throws FileNotFoundException{
         

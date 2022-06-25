@@ -3,12 +3,35 @@ import com.opencsv.*;
 import com.opencsv.exceptions.CsvValidationException;
 import java.util.*;
 
+/**
+ * Progetto laboratorio A: "Emotional songs", anno 2021-2022
+ * @author Davide Buggin, Matricola: 749715
+ * @author Emanuele Buggin, Matricola:748676
+ * @author Marco Calcaterra, Matricola: XXXXXX
+ * @author Mariano Librici, Matricola: XXXXXX
+ */
+
 public class Funzioni {
     
+    /**
+     * Creazione oggetto "scanner" di tipo Scanner per inserimento da tastiera.
+     */
     static Scanner scanner = new Scanner(System.in);
+    /**
+     * Path del file dove sono salvate tutti i brani.
+     */
     static String pathSong = "Canzoni.dati.csv";
+    /**
+     * Path del file dove sono salvate le playlist.
+     */
     static String pathPlaylist = "CreaPlaylistProva.csv";
+    /**
+     * Path del file dove sono salvate tutte emozioni provate durante l'ascolto dei brani.
+     */
     static String pathEmozioni = "Emozioni.dati.csv";
+    /**
+     * Permette di registrare le playlist se uguale a "true".
+     */
     static Boolean registrarePlaylist = false;
 
     public static void cercaBranoMusicale(){
@@ -20,12 +43,17 @@ public class Funzioni {
 
             System.out.println("\nCosa si desidera fare?\n \n1- Ricerca per Brano\n \n2- Ricerca per Autore\n \n3- Ricerca per Anno\n\n");
             System.out.println("Scegliere un opzione (1, 2, 3):");
+            /**
+             * Permette di scegliere in base a quale parametro effettuare la ricerca
+             */
             int scelta = scanner.nextInt();
             String nomePlaylist = "";
 
         switch(scelta){
 
-            //ricerca per nome
+            /**
+             * Permette di cercare un brano in base al nome.
+             */
             
             case 1: {
                 
@@ -37,7 +65,14 @@ public class Funzioni {
                         nomePlaylist = scanner.next(); 
                     }
 
+                    /**
+                     * Array di tipo String che conterra' ad ogni ciclo una riga del file selezionato.
+                     */
                     String [] nextLinea;
+                    /**
+                     * Array di tipo String che conterra' ad ogni ciclo una riga del file selezionato diviso in "blocchi" 
+                     * prendendo come divisione tra i vari blocchi il carattere ",".
+                     */
                     String[] output;
                     String checkers;    
                     Boolean branoNonTrovato = false;
@@ -76,7 +111,9 @@ public class Funzioni {
                 break;
             }
 
-            //ricerca per autore
+            /**
+             * Permette di cercare un brano in base all'autore.
+             */
 
             case 2:{
 
@@ -87,9 +124,22 @@ public class Funzioni {
                         nomePlaylist = scanner.next();  
                     }
 
+                    /**
+                     * Crea un array di tipo String che conterra' ad ogni ciclo una riga del file selezionato.
+                    */
                     String [] nextLinea;
+                    /**
+                     * Array di tipo String che conterra' ad ogni ciclo una riga del file selezionato diviso in "blocchi" 
+                     * prendendo come divisione tra i vari blocchi il carattere ",".
+                     */
                     String[] output;
+                    /**
+                     * String che permette la divisione in blocchi tramite la funzione split().
+                     */
                     String checkers;
+                    /**
+                     * Boolean che se uguale a false avvisa che nessun brano e' stato trovato.
+                     */
                     Boolean branoNonTrovato = false;
                     CSVReader reader = new CSVReader(new FileReader(pathSong));
 
@@ -113,7 +163,6 @@ public class Funzioni {
 
                     if (branoNonTrovato == false){
                         System.out.println("\nNessun brano corrispondente trovato\n");
-
                     }
 
                 }
@@ -124,7 +173,9 @@ public class Funzioni {
                 break;
             }
 
-            //ricerca per anno
+            /**
+             * Permette di cercare un brano in base all'anno di pubblicazione.
+            */
 
             case 3:{
                 try {
@@ -135,7 +186,14 @@ public class Funzioni {
                         nomePlaylist = scanner.next();  
                     }
 
+                    /**
+                     * Crea un array di tipo String che conterra' ad ogni ciclo una riga del file selezionato.
+                    */
                     String [] nextLinea;
+                    /**
+                     * Array di tipo String che conterra' ad ogni ciclo una riga del file selezionato diviso in "blocchi" 
+                     * prendendo come divisione tra i vari blocchi il carattere ",".
+                    */
                     String[] output;
                     String checkers;
                     Boolean branoNonTrovato = false;
