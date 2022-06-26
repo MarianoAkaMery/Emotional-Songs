@@ -4,23 +4,41 @@ import java.util.*;
 
 /**
  * Progetto laboratorio A: "Emotional songs", anno 2021-2022
+ * 
  * @author Davide Buggin, Matricola: 749715
  * @author Emanuele Buggin, Matricola:748676
- * @author Marco Calcaterra, Matricola: XXXXXX
+ * @author Marco Calcaterra, Matricola: 748236
  * @author Mariano Librici, Matricola: XXXXXX
  */
 
 public class LoginChecker {
-    static Scanner scan=new Scanner(System.in);
-    //Login function 
+    static Scanner scan = new Scanner(System.in);
+    
+    /**
+     * Funzione che controlla se i dati inseriti al momento del login siano corretti.
+     * 
+     * @param UserId IdUser dell'utente.
+     * @param PasswordId Password dell'utente.
+     * @return True se il login e' stato eseguito correttamente, false in caso di credenziali errate.
+     */
     public static boolean LoginCheckNew(String UserId ,String PasswordId) {
 
         try {
     
             CSVReader reader = new CSVReader(new FileReader("UtentiRegistrati.dati.csv"));
-            
+                
+            /**
+             * Array di tipo String che conterra' ad ogni ciclo una riga del file selezionato.
+             */
             String [] nextLinea;
+            /**
+             * Array di tipo String che conterra' ad ogni ciclo una riga del file selezionato diviso in "blocchi" 
+             * prendendo come divisione tra i vari blocchi il carattere ",".
+             */
             String[] output;
+            /**
+             * String che permette la divisione in blocchi tramite la funzione split().
+             */
             String checkers;    
             int i=0;        
 

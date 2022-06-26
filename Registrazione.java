@@ -6,18 +6,20 @@ import com.opencsv.CSVWriter;
 
 /**
  * Progetto laboratorio A: "Emotional songs", anno 2021-2022
+ * 
  * @author Davide Buggin, Matricola: 749715
  * @author Emanuele Buggin, Matricola:748676
- * @author Marco Calcaterra, Matricola: XXXXXX
+ * @author Marco Calcaterra, Matricola: 748236
  * @author Mariano Librici, Matricola: XXXXXX
  */
 public class Registrazione extends LoginChecker{
 
     static Scanner scan=new Scanner(System.in);
     /**
-     * Funzione che permette la registrazione all'applicazione
-     * @return 
-     * @throws FileNotFoundException
+     * Funzione che permette la registrazione all'applicazione.
+     * 
+     * @return Boolean, se true indica che la registrazione e' andata a buon fine.
+     * @throws FileNotFoundException se il file non viene trovato.
      */
     public static boolean RegistrazioneNew() throws FileNotFoundException{
         
@@ -27,7 +29,7 @@ public class Registrazione extends LoginChecker{
         while(ContinuaLogin==true){
 
             /**
-             * Permette di inserire il nome
+             * Aggiunta del nome.
              */ 
             try{        
                 System.out.println("Inserisci il tuo nome:");
@@ -43,7 +45,7 @@ public class Registrazione extends LoginChecker{
             }
             
             /**
-             * Permette di inserire in cognome
+             * Aggiunta del cognome.
              */
             try{        
                 System.out.println("Inserisci il tuo cognome:");
@@ -58,7 +60,7 @@ public class Registrazione extends LoginChecker{
             }
 
             /**
-             * Permette di inserire il codice fiscale
+             * Aggiunta del codice fiscale.
              */   
             System.out.println("Inserisci il tuo codice fiscale:");
             String FiscalCode=scan.nextLine();
@@ -71,7 +73,7 @@ public class Registrazione extends LoginChecker{
             } 
 
             /**
-             * Permette di inserire l'indirizzo fisico
+             * Aggiunta dell'indirizzo fisico.
              */
             try{        
                 System.out.println("Inserisci il tuo indirizzo fisico:");
@@ -86,7 +88,7 @@ public class Registrazione extends LoginChecker{
             }
 
             /**
-             * Permette di inserire l'indirizzo di posta elettronica
+             * Aggiunta dell'indirizzo di posta elettronica
              */         
             System.out.println("Inserisci il tuo indirizzo di posta elettronica:");
             String EmailAddress=scan.nextLine();
@@ -100,7 +102,7 @@ public class Registrazione extends LoginChecker{
             }
 
             /**
-             * Permette di inserire l'UserId
+             * Aggiunta dell'UserId
              */ 
             try{        
                 System.out.println("Inserisci il tuo UserdId:");
@@ -116,7 +118,7 @@ public class Registrazione extends LoginChecker{
             }
 
             /**
-             * Permette di inserire la Password
+             * Aggiunta della Password.
              */       
             System.out.println("Inserisci la tua password:\n(Minimo 7 caratteri)");
             String UserPassword=scan.nextLine();
@@ -133,25 +135,12 @@ public class Registrazione extends LoginChecker{
 
                 try {
                     
-                    /**
-                     *Permette di salvare i dati nel csv e return?
-                     */
+
                     File file=new File("UtentiRegistrati.dati.csv" );
-                    // create FileWriter object with file as parameter
-                    /**
-                     *
-                     */
                     FileWriter outputfile = new FileWriter(file, true);
-            
-                    // create CSVWriter object filewriter object as parameter
                     CSVWriter writer = new CSVWriter(outputfile);         
-                    String [] CsvLogin={LoginSession.get(0),LoginSession.get(1),LoginSession.get(2),LoginSession.get(3),LoginSession.get(4),LoginSession.get(5),LoginSession.get(6)} ;
+                    String [] CsvLogin={"\n",LoginSession.get(0),LoginSession.get(1),LoginSession.get(2),LoginSession.get(3),LoginSession.get(4),LoginSession.get(5),LoginSession.get(6)} ;
                     writer.writeNext(CsvLogin);
-                    // Now clear the stream
-                    /**
-                     * Liberare lo stream 
-                     */
-                    // using flush() method
                     writer.flush();
                     writer.close();
                     

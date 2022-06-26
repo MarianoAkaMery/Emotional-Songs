@@ -7,7 +7,7 @@ import java.util.*;
  * Progetto laboratorio A: "Emotional songs", anno 2021-2022
  * @author Davide Buggin, Matricola: 749715
  * @author Emanuele Buggin, Matricola:748676
- * @author Marco Calcaterra, Matricola: XXXXXX
+ * @author Marco Calcaterra, Matricola: 748236
  * @author Mariano Librici, Matricola: XXXXXX
  */
 
@@ -24,7 +24,7 @@ public class Funzioni {
     /**
      * Path del file dove sono salvate le playlist.
      */
-    static String pathPlaylist = "CreaPlaylistProva.csv";
+    static String pathPlaylist = "CreaPlaylist.csv";
     /**
      * Path del file dove sono salvate tutte emozioni provate durante l'ascolto dei brani.
      */
@@ -321,9 +321,11 @@ public class Funzioni {
         String checkers;
         /**
          *  Inserimento del nome della playlist
-         */     
+         */
+        String nomePlaylist = "";
+        do{
         System.out.println("Nome Playlist registrata in precedenza da cercare:");
-        String nomePlaylist = scanner.next();
+        nomePlaylist = scanner.next();}while(!(nomePlaylist == ""));
 
         while ((nextLinea = reader.readNext()) != null){
             
@@ -481,7 +483,7 @@ public class Funzioni {
         checkers= Arrays.toString(nextLinea).replace("[", "").replace("]", "");
         output = checkers.split(",");
 
-        if(output[2].contains(brano)){
+        if(output[2].equals(brano)){
             /**
              * Per ogni ciclo somma il voto di ogni emozione, e il contatore del numero di persone
              */

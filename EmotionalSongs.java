@@ -3,9 +3,10 @@ import java.util.Scanner;
 
 /**
  * Progetto laboratorio A: "Emotional songs", anno 2021-2022
+ * 
  * @author Davide Buggin, Matricola: 749715
  * @author Emanuele Buggin, Matricola:748676
- * @author Marco Calcaterra, Matricola: XXXXXX
+ * @author Marco Calcaterra, Matricola: 748236
  * @author Mariano Librici, Matricola: XXXXXX
  */
 
@@ -15,7 +16,7 @@ public class EmotionalSongs {
 
     /**
      * Classe principale con la funzione "DisplayMenu" che mostra il menu dell'applicazione
-     */
+    */
     public static String nomeUtente = null;
     static Scanner scan=new Scanner(System.in);
 
@@ -25,10 +26,13 @@ public class EmotionalSongs {
 
     /**
      * All'avvio del programma, verra' mostrato un menu dove:
-     * per chi non ha effettuato il login sara' possibile cercare brani(in varie modalita'), visualizzare emozioni riguardanti specifici brani e registrarsi
-     * mentre per chi ha effettuato il login, oltre alle funzioni precedenti, sara' possibile creare playlist e inserire emozioni provate durante l'ascolto di brani musicali, 
-     * @throws CsvValidationException single line is invalid
-     * @throws IoException produced by failed or interrupted I/O operations.
+     * per chi non ha effettuato il login sara' possibile cercare brani(in varie modalita'), 
+     * visualizzare emozioni riguardanti specifici brani e registrarsi, 
+     * mentre per chi ha effettuato il login, oltre alle funzioni precedenti, 
+     * sara' possibile creare playlist e inserire emozioni provate durante l'ascolto di brani musicali, 
+     * 
+     * @throws CsvValidationException quando una linea non e' valida.
+     * @throws IoException errori nelle operazioni di IO.
      */
     public static void DisplayMenu() throws CsvValidationException, IOException{
         /**
@@ -37,7 +41,7 @@ public class EmotionalSongs {
         boolean continua = true;
         /**
          * Gestisce l'avvenuto "login" di un utente
-        */
+         */
         Boolean LoginValidator = false;
         
         while(continua==true){
