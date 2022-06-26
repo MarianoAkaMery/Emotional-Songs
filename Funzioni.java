@@ -34,6 +34,9 @@ public class Funzioni {
      */
     static Boolean registrarePlaylist = false;
 
+    /**
+     * Funzione che permette di ricercare nel file "Canzoni.dati.csv".
+     */
     public static void cercaBranoMusicale(){
 
         try{
@@ -74,7 +77,13 @@ public class Funzioni {
                      * prendendo come divisione tra i vari blocchi il carattere ",".
                      */
                     String[] output;
-                    String checkers;    
+                    /**
+                     * String che permette la divisione in blocchi tramite la funzione split().
+                     */
+                    String checkers;  
+                    /**
+                     * Boolean che se uguale a false avvisa che nessun brano e' stato trovato.
+                     */  
                     Boolean branoNonTrovato = false;
                     CSVReader reader = new CSVReader(new FileReader(pathSong));
 
@@ -175,7 +184,7 @@ public class Funzioni {
 
             /**
              * Permette di cercare un brano in base all'anno di pubblicazione.
-            */
+             */
 
             case 3:{
                 try {
@@ -188,14 +197,20 @@ public class Funzioni {
 
                     /**
                      * Crea un array di tipo String che conterra' ad ogni ciclo una riga del file selezionato.
-                    */
+                     */
                     String [] nextLinea;
                     /**
                      * Array di tipo String che conterra' ad ogni ciclo una riga del file selezionato diviso in "blocchi" 
                      * prendendo come divisione tra i vari blocchi il carattere ",".
-                    */
+                     */
                     String[] output;
+                    /**
+                     * String che permette la divisione in blocchi tramite la funzione split().
+                     */
                     String checkers;
+                    /**
+                     * Boolean che se uguale a false avvisa che nessun brano e' stato trovato.
+                     */
                     Boolean branoNonTrovato = false;
 
                     CSVReader reader = new CSVReader(new FileReader(pathSong));
@@ -236,6 +251,9 @@ public class Funzioni {
                 break;
             }
             
+            /**
+             * Se inserito un valore non valido, permette di inserne uno nuovo.
+             */
             default:{
                     System.out.println("Opzione non valida");
             }
@@ -258,31 +276,52 @@ public class Funzioni {
         }  
     }
 
+    /**
+     * Funzione alla quale si puo' accedere solamente  dopo essersi loggati nell'applicazione e permette di 
+     * registrare una playlist musicale.
+     */
     public static void RegistraPlaylist(){
         
         try{
             
-            registrarePlaylist=true;
+            registrarePlaylist = true;
             cercaBranoMusicale();
 
         }catch(Exception e){
             System.out.println("Si è verificato un problema!");
         }
     }
-       
+    
+    /**
+     * Funzione alla quale si puo' accedere solamente dopo essersi loggati nell'applicazione e dopo
+     * aver creato almeno una playlist con almeno una canzone, permette di inserire emozioni provate 
+     * durante l'ascolto di uno o piu' brani.
+     * @throws IOException
+     * @throws CsvValidationException
+     */
     public static void inserisciEmozioniBrano() throws IOException, CsvValidationException{
-        //una volta loggato puoi accedere a questa funzione e cercare playlist e confrontare con nome utente se 
-        //esiste iniziare
-        //chiedere per ogni canzoni della playlist se e' si vuole inserire una emozione
+
         FileWriter fileWriter = new FileWriter(pathEmozioni,true);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         PrintWriter printWriter = new PrintWriter(bufferedWriter);
         
         CSVReader reader = new CSVReader(new FileReader(pathPlaylist));
+        /**
+         * Crea un array di tipo String che conterra' ad ogni ciclo una riga del file selezionato.
+         */
         String [] nextLinea;
+        /**
+         * Array di tipo String che conterra' ad ogni ciclo una riga del file selezionato diviso in "blocchi" 
+         * prendendo come divisione tra i vari blocchi il carattere ",".
+         */
         String[] output;
+        /**
+         * String che permette la divisione in blocchi tramite la funzione split().
+         */
         String checkers;
-                    
+        /**
+         *  Inserimento del nome della playlist
+         */     
         System.out.println("Nome Playlist registrata in precedenza da cercare:");
         String nomePlaylist = scanner.next();
 
@@ -294,78 +333,97 @@ public class Funzioni {
             if (output[0].equals(EmotionalSongs.nomeUtente)){
 
                 if(output[1].contains(nomePlaylist)){
-                                    //chiedere se si vuole inserire emozione per canzone
-                    System.out.println("4");
-                                    //file emozione nome-playlist-canzone-emozioni
+
                     System.out.println("Vuoi inseire emozioni per la canzone" + output[2]);
                     System.out.println("1-Si,0-No");
+                    /**
+                     * Ad ogni ciclo (while) viene chiesto se inserire emozioni riguardo al brano corrente.
+                     */
                     int decisione = scanner.nextInt();
                     int risposta = 0;
 
                     if( decisione == 1){
                         
                         System.out.println("Dare valutazioni da 1 a 5 per le seguenti emozioni provate.");
-                        //3 Amazemant
+                        /**
+                         * Ciclo riguardante emozione: Amazemant
+                         */
                         do{
                             System.out.println("Stupore: Sensazione di meraviglia o felicità.");
                             risposta = scanner.nextInt();
-                        }while(risposta<1 && risposta >5);
+                        }while(risposta > 5 || risposta == 0);
                         String Amazemant = String.valueOf(risposta);
 
-                        //4 Solemnity
+                        /**
+                         * Ciclo riguardante emozione: Solemnity
+                         */
                         do{
                             System.out.println("Solennità: Sensazione di trascendenza, ispirazione.");
                             risposta = scanner.nextInt();
-                        }while(risposta<1 && risposta >5);
+                        }while(risposta > 5 || risposta == 0);
                         String Solemnity = String.valueOf(risposta);                
-                
-                        //5 Tenderness
+
+                        /**
+                         * Ciclo riguardante emozione: Tenderness
+                         */
                         do{
                             System.out.println("Brividi: Tenerezza Sensualità, affetto, sentimento d'amore.");
                             risposta = scanner.nextInt();
-                        }while(risposta<1 && risposta >5);
+                        }while(risposta > 5 || risposta == 0);
                         String Tenderness = String.valueOf(risposta);
-                                        
-                        //6 Nostalgia
+
+                        /**
+                         * Ciclo riguardante emozione: Nostalgia
+                         */            
                         do{
                             System.out.println("Nostalgia; Sentimenti sognanti, malinconici e sentimentali.");
                             risposta = scanner.nextInt();
-                        }while(risposta<1 && risposta >5);
+                        }while(risposta > 5 || risposta == 0);
                         String Nostalgia = String.valueOf(risposta);
 
-                        //7 Calmness
+                        /**
+                         * Ciclo riguardante emozione: Calmness
+                         */
                         do{
                             System.out.println("Calma: Rilassamento, serenità, meditazione.");
                             risposta = scanner.nextInt();
-                        }while(risposta<1 && risposta >5);
+                        }while(risposta > 5 || risposta == 0);
                         String Calmness = String.valueOf(risposta);
 
-                        //8 Power
+                        /**
+                         * Ciclo riguardante emozione: Power
+                         */
                         do{
                             System.out.println("Potenza: Sentirsi forte, eroico, trionfante, energico.");
                             risposta = scanner.nextInt();
-                        }while(risposta<1 && risposta >5);
+                        }while(risposta > 5 || risposta == 0);
                         String Power = String.valueOf(risposta);
 
-                        //9 Joy
+                        /**
+                         * Ciclo riguardante emozione: Joy
+                         */
                         do{
                             System.out.println("Gioia: Sensazione di ballare, di rimbalzare, di essere animati, di divertirsi.");
                             risposta = scanner.nextInt();
-                        }while(risposta<1 && risposta >5);
+                        }while(risposta > 5 || risposta == 0);
                         String Joy = String.valueOf(risposta);
 
-                        //10 Tension
+                        /**
+                         * Ciclo riguardante emozione: Tension
+                         */
                         do{
                             System.out.println("Tensione: Sensazione di nervosismo, impazienza, irritazione.");
                             risposta = scanner.nextInt();
-                        }while(risposta<1 && risposta >5);
+                        }while(risposta > 5 || risposta == 0);
                         String Tension = String.valueOf(risposta);
-                                        
-                        //11 Sadness
+
+                        /**
+                         * Ciclo riguardante emozione: Sadness
+                         */                                        
                         do{
                             System.out.println("Tristezza: Sensazione di depressione, tristezza.");
                             risposta = scanner.nextInt();
-                        }while(risposta<1 && risposta >5);
+                        }while(risposta > 5 || risposta == 0);
                         String Sadness = String.valueOf(risposta);
 
                         printWriter.println(EmotionalSongs.nomeUtente+","+nomePlaylist+","+output[2]+","+Amazemant+","+Solemnity+","+Tenderness+","+Nostalgia + "," + Calmness + "," + Power + "," + Joy + "," + Tension+ "," + Sadness);
@@ -378,19 +436,19 @@ public class Funzioni {
             printWriter.close();             
     }
 
+    /**
+     * Funzione che permette di visualizzare le emozioni provate dagli utenti per un brano specifico
+     * @throws CsvValidationException
+     * @throws NumberFormatException
+     * @throws IOException
+     */
     public static void visualizzaEmozioneBrano() throws CsvValidationException, NumberFormatException, IOException{
-     /*una volta ricercato il brano, deve essere possibile selezionare il brano e visualizzare tutte
-    le informazioni relative al brano selezionato. deve anche essere possibile visualizzare un prospetto riassuntivo delle emozioni
-    associate a quel brano o l’indicazione che il brano ricercato non contiene emozioni inserite
-    dagli utenti. Nel caso di presenza di tag emozionali per quel brano, si potranno
-    visualizzare le emozioni associate dagli utenti, in forma aggregata, con il numero di utenti
-    per ciascuna emozione e, ad esempio, la media del punteggio per ciascuna emozione,
-    oltre agli eventuali commenti lasciati dagli utenti.
 
-    cioe ricerca nel brano nel file emozioni e per ogni emozione numero di utenti e media voto
-    */
     CSVReader reader = new CSVReader(new FileReader(pathEmozioni));
-
+    
+    /**
+     * Variabili per inserire valutazioni delle emozioni.
+     */
     int votoAmazement = 0;
     int votoSolemnity = 0;
     int votoTenderness = 0;
@@ -404,17 +462,29 @@ public class Funzioni {
 
     System.out.println("Brano da cercare:");
     String brano = scanner.nextLine();
-    String [] nextLine;
+    /**
+     * Crea un array di tipo String che conterra' ad ogni ciclo una riga del file selezionato.
+     */
+    String [] nextLinea;
+    /**
+     * Array di tipo String che conterra' ad ogni ciclo una riga del file selezionato diviso in "blocchi" 
+     * prendendo come divisione tra i vari blocchi il carattere ",".
+     */
     String[] output;
+    /**
+     * String che permette la divisione in blocchi tramite la funzione split().
+     */
     String checkers;
 
-    while ((nextLine = reader.readNext()) != null){
+    while ((nextLinea = reader.readNext()) != null){
 
-        checkers= Arrays.toString(nextLine).replace("[", "").replace("]", "");
+        checkers= Arrays.toString(nextLinea).replace("[", "").replace("]", "");
         output = checkers.split(",");
 
         if(output[2].contains(brano)){
-                
+            /**
+             * Per ogni ciclo somma il voto di ogni emozione, e il contatore del numero di persone
+             */
             votoAmazement += Integer.parseInt(output[3].trim());;
             votoSolemnity += Integer.parseInt(output[4].trim());
             votoTenderness += Integer.parseInt(output[5].trim());
@@ -433,6 +503,9 @@ public class Funzioni {
         System.out.println("Nessuno ha inserito emozioni per questo brano");
     }
     else{
+        /**
+         * Calcola la media di ogni emozione.
+         */
         float mediaAmazement = votoAmazement/numeroPersone;
         float mediaSolemnity = votoSolemnity/numeroPersone;
         float mediaTenderness = votoTenderness/numeroPersone;

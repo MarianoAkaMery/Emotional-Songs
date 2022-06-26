@@ -5,7 +5,7 @@ import java.util.*;
 public class LoginChecker {
     static Scanner scan=new Scanner(System.in);
     //Login function 
-    public static boolean LoginCheckNew(String UserId,String PasswordId) {
+    public static boolean LoginCheckNew(String UserId ,String PasswordId) {
 
         try {
     

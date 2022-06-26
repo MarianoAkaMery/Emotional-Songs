@@ -35,7 +35,11 @@ public class EmotionalSongs {
          *  Consente la ripetizione del codice fino a quando non si seleziona "7"
          */
         boolean continua = true;
-
+        /**
+         * Gestisce l'avvenuto "login" di un utente
+        */
+        Boolean LoginValidator = false;
+        
         while(continua==true){
 
             System.out.println("Benvenuti in EmotionaSongs");
@@ -43,10 +47,7 @@ public class EmotionalSongs {
             System.out.println("Scegliere un opzione (1, 2, 3, 4, 5, 6, 7):");
             int Choise=scan.nextInt();
             scan.nextLine();
-            /**
-             * Gestisce l'avvenuto "login" di un utente
-             */
-            Boolean LoginValidator = false;
+
             
             switch(Choise){
                 /**
@@ -86,14 +87,14 @@ public class EmotionalSongs {
                      * Inserimento del nome utente
                      */
                     System.out.println("Inseririe UserId:");
-                    String UserdId = scan.nextLine();
+                    String UserdId2 = scan.nextLine();
                     /**
-                     * Inserimento dell password
+                     * Inserimento della password
                      */
-                    System.out.println("Inseririe Password:");
-                    String PasswordId = scan.nextLine();
-                    LoginValidator = LoginChecker.LoginCheckNew(UserdId,PasswordId);
-                    nomeUtente = UserdId;
+                    System.out.println("Inserire Password:");
+                    String PasswordId2 = scan.nextLine();
+                    LoginValidator = LoginChecker.LoginCheckNew(UserdId2,PasswordId2);
+                    nomeUtente = UserdId2;
                     
                     if(LoginValidator == true){
                         System.out.println("\nLogin effettuato con successo!\n \n");
