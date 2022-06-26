@@ -2,6 +2,14 @@ import java.io.FileReader;
 import com.opencsv.CSVReader;
 import java.util.*;
 
+/**
+ * Progetto laboratorio A: "Emotional songs", anno 2021-2022
+ * @author Davide Buggin, Matricola: 749715
+ * @author Emanuele Buggin, Matricola:748676
+ * @author Marco Calcaterra, Matricola: XXXXXX
+ * @author Mariano Librici, Matricola: XXXXXX
+ */
+
 public class LoginChecker {
     static Scanner scan=new Scanner(System.in);
     //Login function 

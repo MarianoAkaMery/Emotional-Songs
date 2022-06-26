@@ -334,15 +334,15 @@ public class Funzioni {
 
                 if(output[1].contains(nomePlaylist)){
 
-                    System.out.println("Vuoi inseire emozioni per la canzone" + output[2]);
-                    System.out.println("1-Si,0-No");
+                    System.out.println("Vuoi inserire emozioni per la canzone" + output[2]);
+                    System.out.println("X per inserire emozioni, altro per non inserire.");
                     /**
                      * Ad ogni ciclo (while) viene chiesto se inserire emozioni riguardo al brano corrente.
                      */
-                    int decisione = scanner.nextInt();
+                    int decisione = scanner.next().charAt(0);
                     int risposta = 0;
 
-                    if( decisione == 1){
+                    if( decisione == 'X'){
                         
                         System.out.println("Dare valutazioni da 1 a 5 per le seguenti emozioni provate.");
                         /**
